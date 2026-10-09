@@ -1,0 +1,66 @@
+name: Device verification report
+description: Share results from testing Pipeworks Dream on a TV device.
+title: "Device test: "
+labels: [device testing]
+body:
+  - type: markdown
+    attributes:
+      value: Please include device and system details. Do not include personal information or network identifiers.
+  - type: input
+    id: device
+    attributes:
+      label: Device model
+      placeholder: Manufacturer and model
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform and version
+      placeholder: Fire OS, Android TV OS, or Google TV version
+    validations:
+      required: true
+  - type: input
+    id: resolution
+    attributes:
+      label: Display resolution
+      placeholder: 1920x1080
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: Install and selection
+      options:
+        - Passed
+        - Failed
+        - Not tested
+    validations:
+      required: true
+  - type: dropdown
+    id: activation
+    attributes:
+      label: Idle activation and visible animation
+      options:
+        - Passed
+        - Failed
+        - Not tested
+    validations:
+      required: true
+  - type: dropdown
+    id: remote
+    attributes:
+      label: Remote navigation, preview, and resume
+      options:
+        - Passed
+        - Failed
+        - Not tested
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: Results and reproduction steps
+      description: Describe what happened and include app version/settings.
+    validations:
+      required: true
