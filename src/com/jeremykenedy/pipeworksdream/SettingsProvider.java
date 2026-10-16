@@ -66,7 +66,12 @@ public final class SettingsProvider extends ContentProvider {
         });
     cursor.addRow(
         new Object[] {
-          "palette", "Pipe finish", "choice", "copper", "copper|cool|neon|monochrome|random", true
+          "palette",
+          "Pipe color",
+          "choice",
+          "copper",
+          "copper|cool|neon|monochrome|red|green|blue|purple|gold|random",
+          true
         });
     cursor.addRow(
         new Object[] {
@@ -86,6 +91,25 @@ public final class SettingsProvider extends ContentProvider {
           "true|false",
           false
         });
+    cursor.addRow(
+        new Object[] {
+          "shape", "Tube shape", "choice", "round", "round|square|hexagonal|random", true
+        });
+    cursor.addRow(
+        new Object[] {
+          "size", "Pipe thickness", "choice", "medium", "thin|medium|thick|random", true
+        });
+    cursor.addRow(
+        new Object[] {"tail", "Tail behavior", "choice", "keep", "keep|follow|random", true});
+    cursor.addRow(
+        new Object[] {
+          "tail_delay",
+          "Tail delay in seconds (following mode)",
+          "choice",
+          "15",
+          "5|15|30|60|random",
+          true
+        });
     return cursor;
   }
 
@@ -102,6 +126,10 @@ public final class SettingsProvider extends ContentProvider {
         new Object[] {
           "randomize_all", Boolean.toString(preferences.getBoolean("randomize_all", false))
         });
+    cursor.addRow(new Object[] {"shape", preferences.getString("shape", "round")});
+    cursor.addRow(new Object[] {"size", preferences.getString("size", "medium")});
+    cursor.addRow(new Object[] {"tail", preferences.getString("tail", "keep")});
+    cursor.addRow(new Object[] {"tail_delay", preferences.getString("tail_delay", "15")});
     return cursor;
   }
 
