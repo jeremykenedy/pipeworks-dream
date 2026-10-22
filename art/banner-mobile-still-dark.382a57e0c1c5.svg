@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 392 408" width="392" height="408" role="img" aria-labelledby="title desc">
+  <title id="title">Pipeworks Dream</title>
+  <desc id="desc">A continuously growing geometric pipe screensaver for television with no ads, analytics, or tracking.</desc>
+  <defs>
+    <linearGradient id="bg">
+      <stop stop-color="#0c0a09" />
+      <stop offset="1" stop-color="#1c1917" />
+    </linearGradient>
+    <linearGradient id="metal" x2="1" y2="1">
+      <stop stop-color="#ffcf8c" />
+      <stop offset=".5" stop-color="#dc7449" />
+      <stop offset="1" stop-color="#8f4934" />
+    </linearGradient>
+  </defs>
+  <rect width="392" height="408" rx="16" fill="url(#bg)" />
+  <text x="20" y="76" fill="#fff" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="36" font-weight="700" letter-spacing="-.5">Pipeworks Dream</text>
+  <text x="20" y="104" fill="#a8a29e" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="12.5">Procedural 3D pipe growth for television</text>
+  <text x="20" y="122" fill="#a8a29e" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="12.5">Fire TV, Android TV and Google TV</text>
+  <rect x="20" y="140" width="110" height="22" rx="11" fill="#1a1a1a" stroke="#3b82f6" stroke-width=".8" />
+  <text x="75.0" y="154" font-size="8.5" font-weight="500" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" fill="#60a5fa">Always animated</text>
+  <rect x="138" y="140" width="160" height="22" rx="11" fill="#1a1a1a" stroke="#22c55e" stroke-width=".8" />
+  <text x="218.0" y="154" font-size="8.5" font-weight="500" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" fill="#4ade80">No tracking or analytics</text>
+  <g transform="translate(-637.44,161.25) scale(1.25)">
+    <g>
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M572 157V112h47V70h42v76h45V99h43" stroke="#080d12" stroke-width="31" />
+        <path d="M572 157V112h47V70h42v76h45V99h43" stroke="url(#metal)" stroke-width="22" />
+        <path d="M572 151v-39h47V70h42v70h45V99h43" stroke="#fff1d6" stroke-opacity=".75" stroke-width="4" />
+        <path d="M603 55h59V37h63v28h46" stroke="#62bbca" stroke-width="12" />
+        <path d="M603 52h59V37h63v28h46" stroke="#e4fcff" stroke-opacity=".85" stroke-width="2.5" />
+      </g>
+      <g fill="#b65a3b">
+        <circle cx="619" cy="112" r="12" />
+        <circle cx="661" cy="70" r="12" />
+        <circle cx="706" cy="146" r="12" />
+      </g>
+      <g fill="#9de2ec">
+        <circle cx="662" cy="37" r="8" />
+        <circle cx="724" cy="65" r="8" />
+      </g>
+    </g>
+  </g>
+</svg>

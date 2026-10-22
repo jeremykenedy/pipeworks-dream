@@ -9,9 +9,24 @@ public final class SettingsValues {
       return oneOf(value, "few", "handful", "many", "ton", "schools", "random");
     if ("speed".equals(key)) return oneOf(value, "slow", "natural", "quick", "random");
     if ("palette".equals(key))
-      return oneOf(value, "copper", "cool", "neon", "monochrome", "random");
+      return oneOf(
+          value,
+          "copper",
+          "cool",
+          "neon",
+          "monochrome",
+          "red",
+          "green",
+          "blue",
+          "purple",
+          "gold",
+          "random");
     if ("background".equals(key)) return oneOf(value, "midnight", "ocean", "graphite", "random");
     if ("lighting".equals(key)) return oneOf(value, "subtle", "cinematic", "bright", "random");
+    if ("shape".equals(key)) return oneOf(value, "round", "square", "hexagonal", "random");
+    if ("size".equals(key)) return oneOf(value, "thin", "medium", "thick", "random");
+    if ("tail".equals(key)) return oneOf(value, "keep", "follow", "random");
+    if ("tail_delay".equals(key)) return oneOf(value, "5", "15", "30", "60", "random");
     if ("glow".equals(key)) return oneOf(value, "on", "off", "random");
     if ("randomize_all".equals(key)) return oneOf(value, "true", "false");
     return false;

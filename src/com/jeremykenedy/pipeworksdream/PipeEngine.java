@@ -14,10 +14,20 @@ public final class PipeEngine {
   private final int height;
   private final int depth;
   private final Random random;
+  private final int tailPoints;
   private final List<Chain> chains = new ArrayList<>();
   private final Set<Long> occupied = new HashSet<>();
 
   public PipeEngine(int width, int height, int depth, int pipeCount, Random random) {
+    this(width, height, depth, pipeCount, random, 0);
+  }
+
+  public PipeEngine(
+      int width, int height, int depth, int pipeCount, Random random, int tailPoints) {
+    if (tailPoints < 0 || tailPoints == 1 || tailPoints > 182) {
+      throw new IllegalArgumentException("Tail length must be zero or between 2 and 182 points");
+    }
+    this.tailPoints = tailPoints;
     if (width < 2 || height < 2 || depth < 2 || pipeCount < 1 || random == null) {
       throw new IllegalArgumentException(
           "Grid dimensions, pipe count, and random source are required");
@@ -38,7 +48,10 @@ public final class PipeEngine {
 
   public void advance() {
     for (Chain chain : chains) {
-      if (chain.points.size() >= MAX_SEGMENTS || !grow(chain)) {
+      if (tailPoints > 0 && chain.points.size() >= tailPoints) {
+        occupied.remove(key(chain.points.remove(0)));
+      }
+      if ((tailPoints == 0 && chain.points.size() >= MAX_SEGMENTS) || !grow(chain)) {
         restart(chain);
       }
     }

@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-22",
+  "platform": "Google TV ARM64 API34 emulator-5580",
+  "apkSha256": "a9642a20efe37fd3b39974d04f59b17eb4940935dbaca60c4b6cbf655eef03d0",
+  "apkBytes": 62276,
+  "version": "1.1.0",
+  "versionCode": 2,
+  "checks": [
+    "Existing7old provider values preserved on1.0to1.1 upgrade;4new keys have expected defaults",
+    "Remote Settings Preview Back",
+    "Offline Credits and Apache license scrolling",
+    "Actual bound DreamService Back detachment",
+    "Exact11preferences5systemvalues restored and Home"
+  ],
+  "screenshots": {
+    "pipeworks-final-actual-dream-google-tv-api34.png": "10c8631999a798fab0d0e6d29be810cd310e6790e9233cda943f70e589647a54",
+    "pipeworks-final-credits-google-tv-api34.png": "ed3a01cb7773b6419e677b542e226601a25efb3613363e3f3f5179a4d7925bcf",
+    "pipeworks-final-settings-google-tv-api34.png": "aa06fe48ec658ace8919e2e05f07062d84511b6a8028afd4c9dbb32255fd8782"
+  },
+  "limits": [
+    "Physical final exact APK route pending",
+    "License bottom not reached in bounded scroll check",
+    "Short route capture is not a performance sample"
+  ]
+}

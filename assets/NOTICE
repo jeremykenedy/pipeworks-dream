@@ -1,0 +1,6 @@
+Pipeworks Dream
+Copyright 2026 Jeremy Kenedy
+
+This project contains original source code and procedural artwork. No third-party visual assets are bundled.
+
+2026-10-15: Rendering replaced with original OpenGL tube meshes, lighting and camera motion.

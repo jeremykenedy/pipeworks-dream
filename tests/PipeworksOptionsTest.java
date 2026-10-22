@@ -5,10 +5,94 @@ import java.util.Random;
 public final class PipeworksOptionsTest {
   public static void main(String[] args) {
     verifyChoices();
+    verifyPipeStylesAndFollowingTail();
     verifyProviderContract();
     verifyEngineMotion();
     verifyDeterministicTurnsAndOccupiedCells();
     verifyInvalidEngineInputs();
+  }
+
+  private static void verifyPipeStylesAndFollowingTail() {
+    String[] colors = {"red", "green", "blue", "purple", "gold"};
+    for (int i = 0; i < colors.length; i++)
+      check(PipeworksOptions.paletteFor(colors[i]) == i + 4, "individual pipe color");
+    check(PipeworksOptions.shapeFor("round") == 0, "round tubes");
+    check(PipeworksOptions.shapeFor("square") == 1, "square ducts");
+    check(PipeworksOptions.shapeFor("hexagonal") == 2, "hexagonal tubes");
+    check(PipeworksOptions.shapeFor("invalid") == 0, "unknown shape defaults to round");
+    check(PipeworksOptions.radiusFor("thin") == .10f, "thin radius");
+    check(PipeworksOptions.radiusFor("medium") == .17f, "medium radius");
+    check(PipeworksOptions.radiusFor("thick") == .24f, "thick radius");
+    check(PipeworksOptions.radiusFor("invalid") == .17f, "unknown thickness uses medium");
+    for (int seconds : new int[] {5, 15, 30, 60}) {
+      check(
+          PipeworksOptions.tailDelayFor(Integer.toString(seconds)) == seconds,
+          "tail delay seconds");
+      for (String speed : new String[] {"slow", "natural", "quick"}) {
+        PipeworksOptions follow =
+            PipeworksOptions.resolve(
+                "few",
+                speed,
+                "blue",
+                "midnight",
+                "cinematic",
+                "off",
+                "square",
+                "thick",
+                "follow",
+                Integer.toString(seconds),
+                false,
+                new Random(1));
+        check(
+            follow.followingTail
+                && follow.shape == 1
+                && follow.radius == .24f
+                && follow.palette == 6,
+            "explicit pipe controls apply together");
+        check(
+            (follow.tailPoints() - 2) * follow.stepDelay >= seconds * 1000,
+            "tail never starts before selected delay");
+        check(
+            (follow.tailPoints() - 3) * follow.stepDelay < seconds * 1000,
+            "tail starts within one growth step of selected delay");
+      }
+    }
+    check(
+        PipeworksOptions.tailDelayFor("invalid") == 15, "unknown tail delay defaults to15seconds");
+    PipeworksOptions defaults =
+        PipeworksOptions.resolve(
+            "few", "natural", "copper", "midnight", "cinematic", "on", false, new Random(1));
+    check(
+        defaults.tailPoints() == 0
+            && !defaults.followingTail
+            && defaults.shape == 0
+            && defaults.radius == .17f,
+        "existing preferences retain full round pipe trails");
+    PipeEngine following = new PipeEngine(400, 2, 2, 1, new ZeroRandom(), 4);
+    for (int tick = 1; tick <= 1600; tick++) {
+      following.advance();
+      int[] snapshot = following.snapshot();
+      check(
+          snapshot.length == Math.min(tick + 1, 4) * 4,
+          "following tail remains bounded and reuses released cells");
+      if (tick == 20)
+        check(snapshot[0] == 17 && snapshot[12] == 20, "oldest point follows behind growing head");
+    }
+    for (int length : new int[] {-1, 1, 183}) {
+      try {
+        new PipeEngine(5, 5, 5, 1, new Random(1), length);
+        throw new AssertionError("invalid tail length accepted");
+      } catch (IllegalArgumentException expected) {
+        check(expected.getMessage() != null, "invalid tail length explains bounds");
+      }
+    }
+  }
+
+  private static final class ZeroRandom extends Random {
+    @Override
+    public int nextInt(int bound) {
+      return 0;
+    }
   }
 
   private static void verifyChoices() {
@@ -61,7 +145,7 @@ public final class PipeworksOptionsTest {
     check(
         random.stepDelay == 340 || random.stepDelay == 650 || random.stepDelay == 1050,
         "random speed choices");
-    check(random.palette >= 0 && random.palette <= 3, "random palette range");
+    check(random.palette >= 0 && random.palette <= 8, "random palette range");
     check(random.background >= 0 && random.background <= 2, "random background range");
     check(random.lighting >= 0 && random.lighting <= 2, "random lighting range");
 
@@ -78,7 +162,7 @@ public final class PipeworksOptionsTest {
     check(
         all.stepDelay == 340 || all.stepDelay == 650 || all.stepDelay == 1050,
         "randomize all speed");
-    check(all.palette >= 0 && all.palette <= 3, "randomize all palette");
+    check(all.palette >= 0 && all.palette <= 8, "randomize all palette");
     check(all.background >= 0 && all.background <= 2, "randomize all background");
     check(all.lighting >= 0 && all.lighting <= 2, "randomize all lighting");
 
@@ -99,10 +183,26 @@ public final class PipeworksOptionsTest {
     String[][] choices = {
       {"density", "few", "handful", "many", "ton", "schools", "random"},
       {"speed", "slow", "natural", "quick", "random"},
-      {"palette", "copper", "cool", "neon", "monochrome", "random"},
+      {
+        "palette",
+        "copper",
+        "cool",
+        "neon",
+        "monochrome",
+        "red",
+        "green",
+        "blue",
+        "purple",
+        "gold",
+        "random"
+      },
       {"background", "midnight", "ocean", "graphite", "random"},
       {"lighting", "subtle", "cinematic", "bright", "random"},
       {"glow", "on", "off", "random"},
+      {"shape", "round", "square", "hexagonal", "random"},
+      {"size", "thin", "medium", "thick", "random"},
+      {"tail", "keep", "follow", "random"},
+      {"tail_delay", "5", "15", "30", "60", "random"},
       {"randomize_all", "true", "false"}
     };
     for (String[] setting : choices) {
@@ -119,6 +219,10 @@ public final class PipeworksOptionsTest {
     check(!SettingsValues.isSupported("lighting", "laser"), "unsupported lighting rejected");
     check(!SettingsValues.isSupported("glow", "maybe"), "unsupported glow choice rejected");
     check(!SettingsValues.isSupported("randomize_all", "yes"), "invalid randomize value rejected");
+    check(!SettingsValues.isSupported("shape", "triangle"), "unsupported shape rejected");
+    check(!SettingsValues.isSupported("size", "giant"), "unsupported thickness rejected");
+    check(!SettingsValues.isSupported("tail", "maybe"), "unsupported tail mode rejected");
+    check(!SettingsValues.isSupported("tail_delay", "forever"), "unsupported tail delay rejected");
     check(!SettingsValues.isSupported("unrecognized", "value"), "unknown preference rejected");
     check(!SettingsValues.isSupported(null, "copper"), "null setting key rejected");
     check(!SettingsValues.isSupported("density", null), "null setting value rejected");

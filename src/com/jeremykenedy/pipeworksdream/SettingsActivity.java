@@ -54,7 +54,7 @@ public final class SettingsActivity extends Activity {
         "Pipe count",
         "density",
         new String[] {"few", "handful", "many", "ton", "schools", "random"},
-        new String[] {"A few", "A handful", "Many", "A ton", "Schools", "Random"},
+        new String[] {"4 pipes", "8 pipes", "12 pipes", "20 pipes", "28 pipes", "Random"},
         "handful");
     addChoice(
         content,
@@ -65,10 +65,23 @@ public final class SettingsActivity extends Activity {
         "natural");
     addChoice(
         content,
-        "Pipe finish",
+        "Pipe color",
         "palette",
-        new String[] {"copper", "cool", "neon", "monochrome", "random"},
-        new String[] {"Copper", "Cool steel", "Neon", "Monochrome", "Random"},
+        new String[] {
+          "copper", "cool", "neon", "monochrome", "red", "green", "blue", "purple", "gold", "random"
+        },
+        new String[] {
+          "Copper",
+          "Cool steel",
+          "Neon mix",
+          "Monochrome",
+          "Red",
+          "Green",
+          "Blue",
+          "Purple",
+          "Gold",
+          "Random"
+        },
         "copper");
     addChoice(
         content,
@@ -84,6 +97,34 @@ public final class SettingsActivity extends Activity {
         new String[] {"on", "off", "random"},
         new String[] {"On", "Off", "Random"},
         "on");
+    addChoice(
+        content,
+        "Tube shape",
+        "shape",
+        new String[] {"round", "square", "hexagonal", "random"},
+        new String[] {"Round tubes", "Square ducts", "Hexagonal tubes", "Random"},
+        "round");
+    addChoice(
+        content,
+        "Pipe thickness",
+        "size",
+        new String[] {"thin", "medium", "thick", "random"},
+        new String[] {"Thin", "Medium", "Thick", "Random"},
+        "medium");
+    addChoice(
+        content,
+        "Tail behavior",
+        "tail",
+        new String[] {"keep", "follow", "random"},
+        new String[] {"Keep the full trail", "Tail follows the growing end", "Random"},
+        "keep");
+    addChoice(
+        content,
+        "Tail delay (following mode)",
+        "tail_delay",
+        new String[] {"5", "15", "30", "60", "random"},
+        new String[] {"5 seconds", "15 seconds", "30 seconds", "1 minute", "Random"},
+        "15");
     CheckBox randomize = new CheckBox(this);
     randomize.setText("Randomize all settings each time the screensaver starts");
     randomize.setTextSize(18);
@@ -96,6 +137,16 @@ public final class SettingsActivity extends Activity {
           }
         });
     content.addView(randomize);
+    Button credits = new Button(this);
+    credits.setText("Credits and licenses");
+    credits.setOnClickListener(
+        new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+            CreditsDialog.show(SettingsActivity.this);
+          }
+        });
+    content.addView(credits);
     setContentView(scroll);
   }
 

@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-22",
+  "device": "Physical FireTVAFTDEC012E/API30",
+  "captureResolution": "1920x1080",
+  "apkSha256": "bbe734c33c32409a52bb2179ecd1d3f712395477b31b3906d02582131ba2e6a1",
+  "apkBytes": 58061,
+  "method": "Unmodified ADB screenshots from running native Preview/Dream. No private UI backups or device preference snapshots published.",
+  "screenshots": {
+    "pipeworks-fire-tv-sparse-round.png": "d82548020853af2377ca29f0a56bcd2f98fed40fdaff6630241e324424956926",
+    "pipeworks-fire-tv-sparse-square.png": "26d56ee7c01955ffab0d8003b8e6bf077639e1f98be969be73ca43012c9e613e",
+    "pipeworks-fire-tv-sparse-hexagonal.png": "9a94e5a6dd98dc1d31f9e6377219c5217bec332d4dace7a47b9fe0370b33694d",
+    "pipeworks-fire-tv-dense-40s.png": "4255732b90c72b4ff12a222af002b0c42f064755b07390b772f287c0b5ef18f0",
+    "pipeworks-fire-tv-dense-75s.png": "705aca7bc57b4892b832c11c37f9baa6b5ce0e7a6f8dd30e3d6149e26fbcb914",
+    "pipeworks-fire-tv-actual-dream.png": "9323ad774a02bd58a4419f628994a7f409d18c8a0dc292a6cc2c29c7ac89b302"
+  },
+  "pacing": {
+    "preset": "28pipes, thick, quick growth",
+    "after40seconds": {
+      "layer": "SurfaceView - com.jeremykenedy.pipeworksdream/com.jeremykenedy.pipeworksdream.PreviewActivity#0",
+      "frames": 125,
+      "fps": 27.35296207936286,
+      "median_ms": 33.3695035,
+      "max_ms": 50.123422
+    },
+    "after75seconds": {
+      "layer": "SurfaceView - com.jeremykenedy.pipeworksdream/com.jeremykenedy.pipeworksdream.PreviewActivity#0",
+      "frames": 126,
+      "fps": 24.27201426737426,
+      "median_ms": 33.495503,
+      "max_ms": 50.235755
+    }
+  },
+  "checks": [
+    "Physical running Preview and Back",
+    "All three tube cross sections",
+    "Actual Dream45seconds and Back",
+    "Exact11app preferences and5systemvalues restored; original asleep state restored"
+  ],
+  "limits": [
+    "Pacing is two short SurfaceFlinger presentation samples, not a sustained thermal benchmark",
+    "Final offline credits APK requires final route test; rendering compiled classes and resources match baseline"
+  ]
+}
