@@ -48,14 +48,14 @@ The app has no ads, analytics, tracking, telemetry, crash reporting, or runtime 
 
 ## Features
 
-- Smooth procedural growth through true cylindrical meshes, rounded bends, depth occlusion, metallic reflections, and a slow camera drift.
-- Choose 4, 8, 12, 20 or 28 independent pipes.
-- Adjust growth speed, individual colors or metallic palettes, tube shape and thickness, midnight/ocean/graphite backgrounds, and subtle/cinematic/bright lighting.
-- Let tails follow their growing ends after a selectable delay, or keep the full trail.
-- Set each option to Random, or randomize all settings when the screensaver starts.
-- Remote-friendly settings and live preview, with a documented provider interface for host apps.
-- Android DreamService with no internet permission, ads, bundled third-party assets, or runtime service dependencies.
-- Guided ADB installer and uninstaller. Device settings are left unchanged.
+| Feature | What it does | Guide |
+| --- | --- | --- |
+| Growing 3D pipes | Cylindrical meshes, rounded bends, depth and moving perspective | [Architecture](docs/ARCHITECTURE.md) |
+| Shapes and finishes | Round, square or hexagonal tubes, three thicknesses and individual colors | [Configuration](docs/CONFIGURATION.md) |
+| Following tails | Keep every trail or let old sections recede after 5, 15, 30 or 60 seconds | [Controls](docs/CONFIGURATION.md) |
+| Remote settings | Choose density, growth, light and background, or randomize them | [Settings provider](docs/CONFIGURATION.md) |
+| Offline operation | Local rendering without ads, analytics, tracking or internet permission | [Verification](docs/VERIFICATION.md) |
+| Guided installer | Verified signed downloads, updates and removal | [Installation](docs/INSTALLATION.md) |
 
 ## Device verification
 
@@ -64,7 +64,7 @@ The table distinguishes emulator checks from physical-device validation. A worki
 | Platform | Device and OS | Result |
 | --- | --- | --- |
 | Android TV emulator | `sdk_google_atv64_arm64`, Android 12/API 31, 1920x1080 | APK installed; settings and preview opened; animation screenshot inspected. System Dream picker was unavailable, so idle activation is unverified. |
-| Fire TV | AFTDEC012E, Fire OS/Android API 30, 1920x1080 capture | Signed upgrade installed; 3D preview and remote settings checked. See the verification guide for DreamService and motion results. Native 4K and long-duration power/thermal behavior remain unverified. |
+| Fire TV | AFTDEC012E, Fire OS/Android API 30, 1920x1080 capture | Physical 3D preview, all three shapes, DreamService and Back checked. Dense 28-pipe samples measured 27.35 and 24.27 presents/second after 40 and 75 seconds. See the verification guide for exact artifact and limits. Native 4K and long-duration power/thermal behavior remain unverified. |
 | Google TV | No physical device available | Looking for a Google TV owner to test system selection, idle activation, remote behavior, and wake/resume, then report the model, Android TV OS version, resolution, and results in [Issues](https://github.com/jeremykenedy/pipeworks-dream/issues). |
 
 ## Requirements
@@ -118,14 +118,9 @@ Open Pipeworks Dream from the TV launcher. Settings take effect when the saver s
 
 ## Screenshots
 
-These unmodified captures show the current 1.1.0 candidate on the Google TV API 34 emulator at 1920x1080. The packaged preview is a reduced copy of the same running scene.
+This unmodified physical Fire TV capture shows the current 3D renderer at 1920x1080. The [complete gallery](docs/SCREENSHOTS.md) includes all three tube shapes, dense growth, actual DreamService output and capture provenance.
 
-<table>
-  <tr>
-    <td><img src="art/screenshots/pipeworks-preview-google-tv-api34.png" alt="Copper round tubes with constant-radius bends and perspective depth on Google TV"><br>Running animation</td>
-    <td><img src="art/screenshots/pipeworks-settings-google-tv-api34.png" alt="Current Pipeworks color, speed, lighting and tube controls on Google TV"><br>Remote settings</td>
-  </tr>
-</table>
+<img src="art/screenshots/pipeworks-fire-tv-dense-75s.png" alt="Dense copper and gold 3D pipes with rounded elbows and depth on physical Fire TV" width="800">
 
 ## Building and testing
 
@@ -153,6 +148,7 @@ CI enforces 100% line and branch coverage for the app's pure Java settings, pipe
 - [Testing](docs/TESTING.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 - [Device verification](docs/VERIFICATION.md)
+- [Screenshot gallery](docs/SCREENSHOTS.md)
 - [Security policy](SECURITY.md)
 
 Show some love by starring this repository on GitHub. The Star button links to the repository; GitHub requires each visitor to click it while signed in.

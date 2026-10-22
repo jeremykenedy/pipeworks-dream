@@ -137,6 +137,16 @@ public final class SettingsActivity extends Activity {
           }
         });
     content.addView(randomize);
+    Button credits = new Button(this);
+    credits.setText("Credits and licenses");
+    credits.setOnClickListener(
+        new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+            CreditsDialog.show(SettingsActivity.this);
+          }
+        });
+    content.addView(credits);
     setContentView(scroll);
   }
 

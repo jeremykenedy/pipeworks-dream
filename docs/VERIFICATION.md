@@ -1,12 +1,23 @@
 # Verification
 
-## Current 1.1.0 source candidate
+## Physical renderer validation on October 22, 2026
+
+The exact signed 1.1.0/code2 renderer baseline was `bbe734c33c32409a52bb2179ecd1d3f712395477b31b3906d02582131ba2e6a1`, 58,061 bytes, with the preserved production signer `d496ee9655c19cd60169675f806718bc3094bf8dd4c20a7cf8a74cabb93d0c86`. It passed a physical AFTDEC012E/API30 run with current round, square and hexagonal shapes, dense 28-pipe thick/quick growth, remote Preview/Back and actual DreamService after 45 seconds followed by Back. Native captures were visually reviewed. Normal playback of the 13-second movie showed continuous growth, rounded elbows, depth, metallic highlights and camera motion with no incidental words or watermark.
+
+Two SurfaceFlinger presentation samples for the actual preview surface measured 27.35296 presents/second after 40 seconds and 24.27201 after 75 seconds. Their maximum intervals were 50.12 ms and 50.24 ms. These are short presentation samples, not an extended FPS, native 4K, idle-power or thermal guarantee. All 11 preferences and five sampled system values were restored exactly, including the original asleep state.
+
+The final credits candidate is `a9642a20efe37fd3b39974d04f59b17eb4940935dbaca60c4b6cbf655eef03d0`, 62,276 bytes. It adds only an offline Credits and licenses dialog, its settings button and bundled NOTICE/LICENSE. All six original nonDEX APK entries, including manifest, resources and embedded preview, are byte-identical to the tested baseline. All 21 compiled classes outside SettingsActivity also match the preserved baseline build byte-for-byte. The [compiled-class and resource record](../art/screenshots/credits-runtime-equivalence.json) identifies the matching entries. The DEX and whole APK differ; final credits/Preview/Dream route verification remains pending for this candidate.
+
+The [physical gallery](SCREENSHOTS.md) and [public provenance](../art/screenshots/physical-provenance.json) contain only scene captures and measurements, without private device preferences or addresses.
+
+
+## Earlier 1.1.0 emulator source candidate
 
 The 2026-10-15 Google TV API 34 host-GPU emulator check used signed APK SHA-256 `b17d4b842001e8f7160f84b5c4891797aa4a8b16a0ab3e7467a58c9015998137`. Its signing certificate SHA-256 `d496ee9655c19cd60169675f806718bc3094bf8dd4c20a7cf8a74cabb93d0c86` matches the published 1.0.0 artifact. The final package rebuild only refreshes its small embedded preview from this native capture.
 
 The 1920x1080 scene was captured after settling and after a 12-second native screen recording. Successive frames show ongoing growth with true quarter-circle centerlines. Native Back returned to settings, and all 11 saved provider values read back unchanged. The current README captures and embedded preview derive from that run. No physical TV selection, timer or enabled state was changed by this emulator check.
 
-The latest circular-bend correction has not yet passed expanded physical-device shape/color/thickness/tail checks, a native 60-second tail observation, or maximum-density resource testing. Those checks, automatic idle activation, native 4K and long-duration thermal/power behavior remain release gates. Older physical measurements below describe their stated candidate, not a retest of every expanded option.
+This earlier emulator check preceded the physical shape and maximum-density tests recorded above. A native 60-second tail-delay observation, automatic idle activation, native 4K and long-duration thermal/power behavior remain unverified. Older physical measurements below describe their stated candidate, not a retest of every expanded option.
 
 ## Host checks
 

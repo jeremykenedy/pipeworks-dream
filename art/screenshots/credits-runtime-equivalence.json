@@ -1,0 +1,70 @@
+{
+  "baselineSha256": "bbe734c33c32409a52bb2179ecd1d3f712395477b31b3906d02582131ba2e6a1",
+  "candidateSha256": "a9642a20efe37fd3b39974d04f59b17eb4940935dbaca60c4b6cbf655eef03d0",
+  "candidateBytes": 62276,
+  "version": "1.1.0",
+  "versionCode": 2,
+  "unchangedApkEntries": [
+    "AndroidManifest.xml",
+    "res/drawable/banner.xml",
+    "res/drawable/icon.xml",
+    "res/drawable-nodpi-v4/screensaver_preview.jpg",
+    "res/xml/dream.xml",
+    "resources.arsc"
+  ],
+  "unchangedCompiledClasses": [
+    "com/jeremykenedy/pipeworksdream/R.class",
+    "com/jeremykenedy/pipeworksdream/PipeworksSceneView$SceneRenderer.class",
+    "com/jeremykenedy/pipeworksdream/PipeworksSceneView$1.class",
+    "com/jeremykenedy/pipeworksdream/R$xml.class",
+    "com/jeremykenedy/pipeworksdream/PipeMesh$Vec.class",
+    "com/jeremykenedy/pipeworksdream/PreviewActivity.class",
+    "com/jeremykenedy/pipeworksdream/PipeMesh$1.class",
+    "com/jeremykenedy/pipeworksdream/PipeEngine$Point.class",
+    "com/jeremykenedy/pipeworksdream/PipeworksSceneView.class",
+    "com/jeremykenedy/pipeworksdream/PipeworksOptions.class",
+    "com/jeremykenedy/pipeworksdream/PipeworksDreamService.class",
+    "com/jeremykenedy/pipeworksdream/SettingsValues.class",
+    "com/jeremykenedy/pipeworksdream/PipeMesh$Sample.class",
+    "com/jeremykenedy/pipeworksdream/PipeworksSceneView$SceneRenderer$1.class",
+    "com/jeremykenedy/pipeworksdream/PipeEngine.class",
+    "com/jeremykenedy/pipeworksdream/PipeEngine$1.class",
+    "com/jeremykenedy/pipeworksdream/PipeMesh$Builder.class",
+    "com/jeremykenedy/pipeworksdream/PipeMesh.class",
+    "com/jeremykenedy/pipeworksdream/PipeEngine$Chain.class",
+    "com/jeremykenedy/pipeworksdream/SettingsProvider.class",
+    "com/jeremykenedy/pipeworksdream/R$drawable.class"
+  ],
+  "changes": [
+    "SettingsActivity appended Credits and licenses button",
+    "Original offline CreditsDialog",
+    "Bundled project NOTICE and full Apache2LICENSE"
+  ],
+  "limits": [
+    "WholeAPKandDEXdiffer; do notclaimwholebinaryequivalence",
+    "Physicalgateandnativecreditsroutependingforfinalcandidate"
+  ],
+  "unchangedCompiledClassSha256": {
+    "com/jeremykenedy/pipeworksdream/R.class": "bba6f75ccd8624e63d8dd8de08c88ebc9db4b1ad5ca29bf3c1e6f0999dc7a6a0",
+    "com/jeremykenedy/pipeworksdream/PipeworksSceneView$SceneRenderer.class": "af0cacfb4d6860fbdbefcb8c23fa308089afec5314a903626e7ce0956a67ba00",
+    "com/jeremykenedy/pipeworksdream/PipeworksSceneView$1.class": "823f0643c41ef6d61bdbe4d6eb2093ae95acd42ba932aa028803265df9d72281",
+    "com/jeremykenedy/pipeworksdream/R$xml.class": "737022ecc347eca6b764baff61a5f81d71336fde84541634130c36fcde8b5434",
+    "com/jeremykenedy/pipeworksdream/PipeMesh$Vec.class": "16fa7662d63d711d9b73ef4a9d468b11108d17725041098f9808c5852cf84872",
+    "com/jeremykenedy/pipeworksdream/PreviewActivity.class": "fe404921d1c29bbd2e9339c307787b17835e849337835198db011bbf358873b1",
+    "com/jeremykenedy/pipeworksdream/PipeMesh$1.class": "292cc111f2ca203e76f917027f9032358cf4e4c683680f190b5a6a220854da86",
+    "com/jeremykenedy/pipeworksdream/PipeEngine$Point.class": "fbd3fac834663695d1f3f99e728dbbad240651c663471286d36ce1838c12df86",
+    "com/jeremykenedy/pipeworksdream/PipeworksSceneView.class": "709e9e570e77052bfdf21c34aea498bc74ba985583f817b51f22f4289c74f490",
+    "com/jeremykenedy/pipeworksdream/PipeworksOptions.class": "5dae6368cc28244ff20a0c8fe47340fe39de08cc7e4e02be3b7b20916bd73948",
+    "com/jeremykenedy/pipeworksdream/PipeworksDreamService.class": "a1573140b363337222343c45758dc4f8e5370eadf153ab1bc810abce27940b01",
+    "com/jeremykenedy/pipeworksdream/SettingsValues.class": "9668d560c487fc34923284f1ef5a47e97d659cbf3213f0bac038f5a7a1272a2b",
+    "com/jeremykenedy/pipeworksdream/PipeMesh$Sample.class": "e478d636856100b52bd20b1835da528c57d76f8a689b1aab2769e621c8e29731",
+    "com/jeremykenedy/pipeworksdream/PipeworksSceneView$SceneRenderer$1.class": "40d4bd64eeb736f9bdc8452bb1d4df440e25d3b0e9f0733fad153a8471f60d2f",
+    "com/jeremykenedy/pipeworksdream/PipeEngine.class": "e1741d4dec80375cab8ab30f340215d1cb2f146ef3a60938dc0c75af018b59d5",
+    "com/jeremykenedy/pipeworksdream/PipeEngine$1.class": "5a8ea50ad7540e63e3cc6bafac223fe8a800befd141207d3f1469d676a70cc2a",
+    "com/jeremykenedy/pipeworksdream/PipeMesh$Builder.class": "1a739c0cb948dccafc48241fd8a138078954119d637a2cc5c17108e23e0e9ba5",
+    "com/jeremykenedy/pipeworksdream/PipeMesh.class": "15e4ec9841dc36a666cc907518ec85489da839e8b1720d006a4ccc1d5d919efb",
+    "com/jeremykenedy/pipeworksdream/PipeEngine$Chain.class": "7107e65045881f1467379b2d0b3e23adbe16135d39d3463e3bca3f39365c5dbf",
+    "com/jeremykenedy/pipeworksdream/SettingsProvider.class": "be8d6bca0bfffd6b9e43d02b89c507a0d06836142dcb15154059147639e02143",
+    "com/jeremykenedy/pipeworksdream/R$drawable.class": "75b5d7bafd4b13f9ebedd4b01b535e64674aef3bb2eb00a5ca399a2fc7469a81"
+  }
+}
