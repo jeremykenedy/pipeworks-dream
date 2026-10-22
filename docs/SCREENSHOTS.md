@@ -29,4 +29,4 @@ The last row shows the exact credits APK `a9642a20efe37fd3b39974d04f59b17eb49409
 
 [Capture provenance](../art/screenshots/physical-provenance.json) records artifact and image hashes. [Device verification](VERIFICATION.md) separates short physical measurements, emulator controls and unverified idle/thermal behavior.
 
-[Final physical credits/update provenance](../art/screenshots/final-physical-provenance.json) records installed-byte verification, remote routes and complete restoration. Moving review remains pending before release.
+[Final physical credits/update provenance](../art/screenshots/final-physical-provenance.json) records installed-byte verification, remote routes and complete restoration. Independent review of the exact final physical movie accepted its continuous motion. The public gallery was verified at 1280 and 320-pixel browser widths.

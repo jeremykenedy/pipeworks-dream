@@ -13,7 +13,7 @@ The [physical gallery](SCREENSHOTS.md) and [public provenance](../art/screenshot
 
 ## Final credits APK physical routes
 
-On October 22, 2026 the exact a964 APK updated the original physical AFTDEC012E/API30 package in place. The installed APK was pulled back and matched all 62,276 bytes and the production certificate. All 11 existing preferences survived. Actual D-pad Settings/Preview/Back, Credits/scroll/Back and a protected-receiver-selected bound DreamService/Back passed. Final scene and license captures were visually inspected. Actual moving playback awaits independent review before release.
+On October 22, 2026 the exact a964 APK updated the original physical AFTDEC012E/API30 package in place. The installed APK was pulled back and matched all 62,276 bytes and the production certificate. All 11 existing preferences survived. Actual D-pad Settings/Preview/Back, Credits/scroll/Back and a protected-receiver-selected bound DreamService/Back passed. Final scene and license captures were visually inspected. Independent normal-playback review of the exact final movie accepted continuous growth and retraction, glossy elbows and subtle camera motion.
 
 The check restored all 11 app preferences and eight sampled OS values exactly, restored the original Asleep state, kept the picker's foreground protection active and left its existing backup byte-for-byte unchanged. No picker force-stop, guard-policy, equipment or timer changes were made. The [final physical record](../art/screenshots/final-physical-provenance.json) contains no private preferences or network address. The earlier dense presentation measurements still apply to the byte-identical rendering classes and resources; they were not repeated for the credits-only update.
 
@@ -21,7 +21,7 @@ The check restored all 11 app preferences and eight sampled OS values exactly, r
 
 On October 22, 2026 the exact a964 credits candidate passed remote Settings to Preview and Back, Credits and license scrolling, and a nonpersistent actual bound DreamService followed by Back/detachment. All 11 app values and five system values matched their before/after snapshots exactly; the app stopped at Home. The first installation upgraded the old 1.0 emulator package: its seven existing provider values were preserved and the new shape/size/tail/tail-delay keys reported their expected defaults. A whole-dictionary equality assertion initially mistook those additive keys for a loss; the corrected subset migration check and final 11-key restoration passed without an app change. License scrolling was verified, but the bounded route test did not scroll to the document's bottom.
 
-The [gallery](SCREENSHOTS.md) shows this final APK's Settings, Credits and DreamService. [Native provenance](../art/screenshots/final-native-provenance.json) records image hashes and test limits. Final physical functional routes passed; independent moving review remains pending.
+The [gallery](SCREENSHOTS.md) shows this final APK's Settings, Credits and DreamService. [Native provenance](../art/screenshots/final-native-provenance.json) records image hashes and test limits. Final physical functional routes and independent moving review passed.
 
 ## Earlier 1.1.0 emulator source candidate
 
