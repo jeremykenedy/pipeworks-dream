@@ -144,6 +144,7 @@ CI enforces 100% line and branch coverage for the app's pure Java settings, pipe
 - [CI](docs/CI.md)
 - [Configuration and provider](docs/CONFIGURATION.md)
 - [Installation and uninstall](docs/INSTALLATION.md)
+- [Host integration contract](docs/INTEGRATION.md)
 - [Release process](docs/RELEASING.md)
 - [Testing](docs/TESTING.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
