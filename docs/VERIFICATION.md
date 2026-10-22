@@ -6,16 +6,22 @@ The exact signed 1.1.0/code2 renderer baseline was `bbe734c33c32409a52bb2179ecd1
 
 Two SurfaceFlinger presentation samples for the actual preview surface measured 27.35296 presents/second after 40 seconds and 24.27201 after 75 seconds. Their maximum intervals were 50.12 ms and 50.24 ms. These are short presentation samples, not an extended FPS, native 4K, idle-power or thermal guarantee. All 11 preferences and five sampled system values were restored exactly, including the original asleep state.
 
-The final credits candidate is `a9642a20efe37fd3b39974d04f59b17eb4940935dbaca60c4b6cbf655eef03d0`, 62,276 bytes. It adds only an offline Credits and licenses dialog, its settings button and bundled NOTICE/LICENSE. All six original nonDEX APK entries, including manifest, resources and embedded preview, are byte-identical to the tested baseline. All 21 compiled classes outside SettingsActivity also match the preserved baseline build byte-for-byte. The [compiled-class and resource record](../art/screenshots/credits-runtime-equivalence.json) identifies the matching entries. The DEX and whole APK differ; the final native credits/Preview/Dream routes passed on the API34 ARM64 emulator. A physical route check for this exact APK remains pending.
+The final credits candidate is `a9642a20efe37fd3b39974d04f59b17eb4940935dbaca60c4b6cbf655eef03d0`, 62,276 bytes. It adds only an offline Credits and licenses dialog, its settings button and bundled NOTICE/LICENSE. All six original nonDEX APK entries, including manifest, resources and embedded preview, are byte-identical to the tested baseline. All 21 compiled classes outside SettingsActivity also match the preserved baseline build byte-for-byte. The [compiled-class and resource record](../art/screenshots/credits-runtime-equivalence.json) identifies the matching entries. The DEX and whole APK differ; the final native credits/Preview/Dream routes passed on the API34 ARM64 emulator. The exact final APK then passed its own physical route check described below.
 
 The [physical gallery](SCREENSHOTS.md) and [public provenance](../art/screenshots/physical-provenance.json) contain only scene captures and measurements, without private device preferences or addresses.
 
+
+## Final credits APK physical routes
+
+On October 22, 2026 the exact a964 APK updated the original physical AFTDEC012E/API30 package in place. The installed APK was pulled back and matched all 62,276 bytes and the production certificate. All 11 existing preferences survived. Actual D-pad Settings/Preview/Back, Credits/scroll/Back and a protected-receiver-selected bound DreamService/Back passed. Final scene and license captures were visually inspected. Actual moving playback awaits independent review before release.
+
+The check restored all 11 app preferences and eight sampled OS values exactly, restored the original Asleep state, kept the picker's foreground protection active and left its existing backup byte-for-byte unchanged. No picker force-stop, guard-policy, equipment or timer changes were made. The [final physical record](../art/screenshots/final-physical-provenance.json) contains no private preferences or network address. The earlier dense presentation measurements still apply to the byte-identical rendering classes and resources; they were not repeated for the credits-only update.
 
 ## Final credits APK native routes
 
 On October 22, 2026 the exact a964 credits candidate passed remote Settings to Preview and Back, Credits and license scrolling, and a nonpersistent actual bound DreamService followed by Back/detachment. All 11 app values and five system values matched their before/after snapshots exactly; the app stopped at Home. The first installation upgraded the old 1.0 emulator package: its seven existing provider values were preserved and the new shape/size/tail/tail-delay keys reported their expected defaults. A whole-dictionary equality assertion initially mistook those additive keys for a loss; the corrected subset migration check and final 11-key restoration passed without an app change. License scrolling was verified, but the bounded route test did not scroll to the document's bottom.
 
-The [gallery](SCREENSHOTS.md) shows this final APK's Settings, Credits and DreamService. [Native provenance](../art/screenshots/final-native-provenance.json) records image hashes and test limits. Physical exact-artifact route approval remains pending.
+The [gallery](SCREENSHOTS.md) shows this final APK's Settings, Credits and DreamService. [Native provenance](../art/screenshots/final-native-provenance.json) records image hashes and test limits. Final physical functional routes passed; independent moving review remains pending.
 
 ## Earlier 1.1.0 emulator source candidate
 

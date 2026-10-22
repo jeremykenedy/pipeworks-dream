@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-22",
+  "device": "AFTDEC012E",
+  "api": 30,
+  "apkSha256": "a9642a20efe37fd3b39974d04f59b17eb4940935dbaca60c4b6cbf655eef03d0",
+  "apkBytes": 62276,
+  "installedApkIdentical": true,
+  "signerSha256": "d496ee9655c19cd60169675f806718bc3094bf8dd4c20a7cf8a74cabb93d0c86",
+  "checks": [
+    "Signed update preserves11preferences",
+    "Actual remote Settings Preview Back",
+    "Offline Credits and license scrolling Back",
+    "Protected receiver selects actual bound DreamService and Back detaches",
+    "11preferences and8system keys restored exactly",
+    "Original Asleep state restored",
+    "Foreground picker protection remains active; existing backup bytes unchanged"
+  ],
+  "screenshots": {
+    "pipeworks-final-preview-fire-tv.png": "c90d3c96bcee56aeebcb97e65101fdb862499204ba457d00af4995599b799d43",
+    "pipeworks-final-credits-fire-tv.png": "f7df17c9cc7d4454d4838487db205b7d64acfc140afaa01aef0540d6ac9319b9",
+    "pipeworks-final-actual-dream-fire-tv.png": "0da4f9201667aae9c8d08c7e3bdbacddc4c7fb9dd97b68f574a4698f96e13ff9"
+  },
+  "movingReview": "Pending independent root review of actual movie",
+  "limits": [
+    "Final credits update did not repeat dense renderer baseline stress sample; rendering classes/resources match baseline",
+    "Short preview and Dream routes do not establish automatic idle or thermal behavior",
+    "License scrolled but bottom not reached in bounded check"
+  ]
+}

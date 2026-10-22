@@ -17,7 +17,7 @@ Pipeworks Dream preserves its package, production signing certificate and settin
 | APK bytes | 62,276 |
 | License | Apache 2.0; bundled NOTICE and full LICENSE |
 
-The intended release assets are [pipeworks-dream.apk](https://github.com/jeremykenedy/pipeworks-dream/releases/download/v1.1.0/pipeworks-dream.apk) and [its SHA-256 file](https://github.com/jeremykenedy/pipeworks-dream/releases/download/v1.1.0/pipeworks-dream.apk.sha256). They become available when 1.1.0 is published; this source candidate is not yet a released artifact. The build is frozen after native credits-route checks; final physical route approval remains pending.
+The intended release assets are [pipeworks-dream.apk](https://github.com/jeremykenedy/pipeworks-dream/releases/download/v1.1.0/pipeworks-dream.apk) and [its SHA-256 file](https://github.com/jeremykenedy/pipeworks-dream/releases/download/v1.1.0/pipeworks-dream.apk.sha256). They become available when 1.1.0 is published; this source candidate is not yet a released artifact. The build is frozen after native and physical credits-route checks; independent moving review remains pending.
 
 The existing Toolkit registry entry resolves this repository's latest release and verifies its checksum. Install or update with `firetv-screensavers --install=pipeworks-dream`, select separately with `screensaver --set=pipeworks-dream`, and remove with `firetv-screensavers --uninstall=pipeworks-dream --force`. Do not add a second entry or silently select the app during installation.
 
