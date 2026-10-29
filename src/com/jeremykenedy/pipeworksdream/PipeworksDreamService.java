@@ -17,12 +17,17 @@ public final class PipeworksDreamService extends DreamService {
   @Override
   public void onDreamingStarted() {
     super.onDreamingStarted();
-    if (scene != null) scene.start();
+    if (scene == null) {
+      scene = new PipeworksSceneView(this);
+      setContentView(scene);
+    }
+    scene.start();
   }
 
   @Override
   public void onDreamingStopped() {
     if (scene != null) scene.stop();
+    scene = null;
     super.onDreamingStopped();
   }
 
