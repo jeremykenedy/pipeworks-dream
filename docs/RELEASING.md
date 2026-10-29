@@ -4,11 +4,16 @@ Update the version in the release notes and build metadata. Run the complete loc
 
 Create a SemVer tag and GitHub release with the signed `pipeworks-dream.apk`, matching `pipeworks-dream.apk.sha256`, and the matching `docs/releases/vVERSION.md`. Download both published assets and verify the checksum. Do not replace assets under an existing tag; release any correction under a new patch version.
 
-## 1.1.1 release candidate
+## 1.1.1 verification record
 
 The [1.1.1 upgrade guide](releases/v1.1.1.md) covers the empty-start correction.
-Before publication, verify a fresh Preview and a new Dream session begin empty
-and grow normally, preserve ordinary Preview pause/resume, exercise persistent
-and following tails, and confirm settings are retained. Capture the final native
-startup sequence and update maintained screenshots from that build. This candidate
-remains unpublished until those native checks and essential CI pass.
+The signed code3 APK passed fresh Preview, two successive system-preview
+DreamService sessions, persistent/following tails, ordinary Preview pause/resume,
+and preserved-settings checks on the Google TV API34 emulator. Current native
+frames and exact artifact hashes are in the [gallery](SCREENSHOTS.md).
+DreamService preview-mode checks do not establish automatic idle activation.
+
+Publish only after essential CI passes at the final commit, the authorized PR
+merges, and the checked-out release commit matches remote main. Tag that exact
+primary commit as v1.1.1 and publish the native-tested signed APK and checksum;
+do not substitute a newly signed CI artifact for the verified bytes.
