@@ -8,8 +8,8 @@ ANDROID_JAR="$SDK/platforms/android-36/android.jar"
 OUT="$ROOT/build"
 KEYSTORE="${PIPEWORKS_KEYSTORE:-$HOME/.android/pipeworks-dream.jks}"
 KEYPASS="${PIPEWORKS_KEYPASS:-$HOME/.android/pipeworks-dream.pass}"
-VERSION_NAME="${VERSION_NAME:-1.1.0}"
-VERSION_CODE="${VERSION_CODE:-2}"
+VERSION_NAME="${VERSION_NAME:-1.1.1}"
+VERSION_CODE="${VERSION_CODE:-3}"
 
 for tool in javac keytool openssl zip; do
   command -v "$tool" >/dev/null || { echo "Missing required tool: $tool" >&2; exit 1; }

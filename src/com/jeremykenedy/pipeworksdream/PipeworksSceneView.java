@@ -150,7 +150,6 @@ final class PipeworksSceneView extends GLSurfaceView {
       GLES20.glGenBuffers(1, buffers, 0);
       meshBuffer = buffers[0];
       engine = new PipeEngine(17, 10, 7, options.pipeCount, new Random(), options.tailPoints());
-      for (int i = 0; i < (options.followingTail ? 1 : 20); i++) engine.advance();
       synchronized (this) {
         epoch++;
         prepared = null;

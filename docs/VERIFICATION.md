@@ -1,5 +1,35 @@
 # Verification
 
+## 1.1.1 startup verification on October 29, 2026
+
+The exact signed 1.1.1/code3 APK
+`62a038159d8db3b04346e23b0ae68707781fa48299ae37a6f77626f9ae646082`
+passed an in-place update from the installed 1.1.0/code2 source candidate on the
+Google TV ARM64 API34 emulator. The installed APK readback matched, the production
+certificate remained unchanged, and all 11 provider values survived the update.
+
+A recording started before fresh Preview launch shows the empty rendered
+background, short initial segments, and subsequent growth. Home/resume retained
+the same Preview ActivityRecord and developed network; Back returned to Settings.
+Two sequential actual bound PipeworksDreamService sessions also began empty and
+grew, first with persistent trails and then with following tails. Back detached
+each session. The service checks used Android 14 IDreamManager.testDream and
+reported `isPreview=true` and `mBound=true`. The shell's normal Dream command was
+root-only, and the SystemUI starter did not bind under the existing dock-only,
+stay-awake configuration. No daemon restart, new grant, or timer change was used.
+
+Final restoration verified all 11 app options, 14 UI preferences, 19 sampled OS
+values, grants/app operations, external files and directories, stopped flags,
+users, and accessibility state. Google Home resumed with no active Dream or UI
+guard. No AndroidRuntime fatal exception was recorded for the tested app process.
+
+The [current gallery](SCREENSHOTS.md) and
+[artifact provenance](../art/screenshots/startup111-native-provenance.json) identify
+unaltered decoded recording frames. Frame sequences were visually reviewed;
+this is not a normal-speed movie, FPS, physical TV, automatic idle, native 4K,
+power, or long-duration performance claim. Earlier physical results below apply
+to their stated 1.1.0 artifacts, not to the 1.1.1 startup change.
+
 ## Physical renderer validation on October 22, 2026
 
 The exact signed 1.1.0/code2 renderer baseline was `bbe734c33c32409a52bb2179ecd1d3f712395477b31b3906d02582131ba2e6a1`, 58,061 bytes, with the preserved production signer `d496ee9655c19cd60169675f806718bc3094bf8dd4c20a7cf8a74cabb93d0c86`. It passed a physical AFTDEC012E/API30 run with current round, square and hexagonal shapes, dense 28-pipe thick/quick growth, remote Preview/Back and actual DreamService after 45 seconds followed by Back. Native captures were visually reviewed. Normal playback of the 13-second movie showed continuous growth, rounded elbows, depth, metallic highlights and camera motion with no incidental words or watermark.

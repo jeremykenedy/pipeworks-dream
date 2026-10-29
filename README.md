@@ -50,7 +50,7 @@ The app has no ads, analytics, tracking, telemetry, crash reporting, or runtime 
 
 | Feature | What it does | Guide |
 | --- | --- | --- |
-| Growing 3D pipes | Cylindrical meshes, rounded bends, depth and moving perspective | [Architecture](docs/ARCHITECTURE.md) |
+| Growing 3D pipes | Empty startup, timed growth, rounded bends, depth and moving perspective | [Architecture](docs/ARCHITECTURE.md) |
 | Shapes and finishes | Round, square or hexagonal tubes, three thicknesses and individual colors | [Configuration](docs/CONFIGURATION.md) |
 | Following tails | Keep every trail or let old sections recede after 5, 15, 30 or 60 seconds | [Controls](docs/CONFIGURATION.md) |
 | Remote settings | Choose density, growth, light and background, or randomize them | [Settings provider](docs/CONFIGURATION.md) |
@@ -63,8 +63,8 @@ The table distinguishes emulator checks from physical-device validation. A worki
 
 | Platform | Device and OS | Result |
 | --- | --- | --- |
-| Android TV emulator | `sdk_google_atv64_arm64`, Android 12/API 31, 1920x1080 | APK installed; settings and preview opened; animation screenshot inspected. System Dream picker was unavailable, so idle activation is unverified. |
-| Fire TV | AFTDEC012E, Fire OS/Android API 30, 1920x1080 capture | Physical 3D preview, all three shapes, DreamService and Back checked. Dense 28-pipe samples measured 27.35 and 24.27 presents/second after 40 and 75 seconds. See the verification guide for exact artifact and limits. Native 4K and long-duration power/thermal behavior remain unverified. |
+| Google TV emulator | ARM64, Android API 34, 1920x1080 | Exact 1.1.1/code3 upgrade retained all 11 settings. Fresh Preview and two system-preview DreamService sessions start empty and grow; Preview pause/resume retains its scene. Automatic idle activation is unverified. |
+| Fire TV, historical 1.1.0 | AFTDEC012E, Fire OS/Android API 30, 1920x1080 capture | Physical 3D preview, all three shapes, DreamService and Back checked. Dense 28-pipe samples measured 27.35 and 24.27 presents/second after 40 and 75 seconds. See the verification guide for exact artifact and limits. Native 4K and long-duration power/thermal behavior remain unverified. |
 | Google TV | No physical device available | Looking for a Google TV owner to test system selection, idle activation, remote behavior, and wake/resume, then report the model, Android TV OS version, resolution, and results in [Issues](https://github.com/jeremykenedy/pipeworks-dream/issues). |
 
 ## Requirements
@@ -118,9 +118,9 @@ Open Pipeworks Dream from the TV launcher. Settings take effect when the saver s
 
 ## Screenshots
 
-This unmodified physical Fire TV capture shows the current 3D renderer at 1920x1080. The [complete gallery](docs/SCREENSHOTS.md) includes all three tube shapes, dense growth, actual DreamService output and capture provenance.
+This frame from the exact 1.1.1/code3 native recording shows pipes growing after an empty start on the Google TV API34 emulator. The [complete gallery](docs/SCREENSHOTS.md) shows the startup sequence, system-preview DreamService sessions, and separately labeled historical physical captures.
 
-<img src="art/screenshots/pipeworks-fire-tv-dense-75s.png" alt="Dense copper and gold 3D pipes with rounded elbows and depth on physical Fire TV" width="800">
+<img src="art/screenshots/pipeworks111-preview-grown-google-tv-api34.png" alt="Pipeworks 1.1.1 copper pipes grown from an empty scene on the Google TV API34 emulator" width="800">
 
 ## Building and testing
 
@@ -156,6 +156,7 @@ Show some love by starring this repository on GitHub. The Star button links to t
 
 ## Release notes
 
+- [Pipeworks Dream 1.1.1](docs/releases/v1.1.1.md)
 - [Pipeworks Dream 1.1.0](docs/releases/v1.1.0.md)
 - [Pipeworks Dream 1.0.0](docs/releases/v1.0.0.md)
 

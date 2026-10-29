@@ -1,6 +1,45 @@
 # Native screenshot gallery
 
-The first three rows are unmodified 1920x1080 physical Fire TV AFTDEC012E/API30 captures from October 22, 2026. The first row uses the exact final signed credits APK a964; the next two rows exercise the unchanged renderer baseline. That renderer baseline APK is `bbe734c33c32409a52bb2179ecd1d3f712395477b31b3906d02582131ba2e6a1`. Its unchanged rendering classes and resources are recorded in the verification guide.
+## Pipeworks 1.1.1 startup
+
+These unaltered frames come from native 1920x1080 recordings of the signed
+1.1.1/code3 APK on the Google TV ARM64 API34 emulator on October 29, 2026.
+The dark first frames are the deliberately empty rendered background, followed
+by the first short segments and then a developed pipe network.
+
+The second and third rows show two successive actual bound DreamService sessions
+started through the system's preview mode (`isPreview=true`, `mBound=true`).
+They verify fresh service startup and growth with persistent and following tails.
+They do not establish normal or automatic idle activation. Back detached each
+session; ordinary Preview Home/resume retained its existing activity and scene.
+
+<table>
+<tr>
+<td><img src="../art/screenshots/pipeworks111-preview-empty-google-tv-api34.png" alt="Pipeworks 1.1.1 fresh preview: empty scene"><br>Fresh Preview: Empty scene</td>
+<td><img src="../art/screenshots/pipeworks111-preview-first-segments-google-tv-api34.png" alt="Pipeworks 1.1.1 fresh preview: first segments"><br>Fresh Preview: First segments</td>
+<td><img src="../art/screenshots/pipeworks111-preview-grown-google-tv-api34.png" alt="Pipeworks 1.1.1 fresh preview: growing pipes"><br>Fresh Preview: Growing pipes</td>
+</tr>
+<tr>
+<td><img src="../art/screenshots/pipeworks111-dream-empty-google-tv-api34.png" alt="Pipeworks 1.1.1 first dreamservice session: empty scene"><br>First DreamService session: Empty scene</td>
+<td><img src="../art/screenshots/pipeworks111-dream-first-segments-google-tv-api34.png" alt="Pipeworks 1.1.1 first dreamservice session: first segments"><br>First DreamService session: First segments</td>
+<td><img src="../art/screenshots/pipeworks111-dream-grown-google-tv-api34.png" alt="Pipeworks 1.1.1 first dreamservice session: growing pipes"><br>First DreamService session: Growing pipes</td>
+</tr>
+<tr>
+<td><img src="../art/screenshots/pipeworks111-following-dream-empty-google-tv-api34.png" alt="Pipeworks 1.1.1 second dreamservice session, following tails: empty scene"><br>Second DreamService session, following tails: Empty scene</td>
+<td><img src="../art/screenshots/pipeworks111-following-dream-first-segments-google-tv-api34.png" alt="Pipeworks 1.1.1 second dreamservice session, following tails: first segments"><br>Second DreamService session, following tails: First segments</td>
+<td><img src="../art/screenshots/pipeworks111-following-dream-grown-google-tv-api34.png" alt="Pipeworks 1.1.1 second dreamservice session, following tails: growing pipes"><br>Second DreamService session, following tails: Growing pipes</td>
+</tr>
+</table>
+
+[1.1.1 capture provenance](../art/screenshots/startup111-native-provenance.json)
+records the tested APK, production certificate, recording and image hashes, and
+verification limits. All 11 app options, 14 UI preferences, and 19 sampled system
+values were restored exactly. The following captures document the earlier
+1.1.0 release and are not physical validation of 1.1.1.
+
+## Historical 1.1.0 captures
+
+The first three historical rows are unmodified 1920x1080 physical Fire TV AFTDEC012E/API30 captures from October 22, 2026. The first row uses the exact final signed credits APK a964; the next two rows exercise the unchanged renderer baseline. That renderer baseline APK is `bbe734c33c32409a52bb2179ecd1d3f712395477b31b3906d02582131ba2e6a1`. Its unchanged rendering classes and resources are recorded in the verification guide.
 
 <table>
 <tr>

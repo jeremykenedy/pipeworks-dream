@@ -15,6 +15,7 @@ public final class PipeMeshTest {
     verifySeparateChains();
     verifyGrowth();
     verifyEngineBounds();
+    verifyFreshStartGrowth();
     check(PipeMesh.build(new int[0], PALETTE).vertexCount == 0, "empty scene");
     check(
         PipeMesh.build(new int[] {0, 0, 0, -1}, PALETTE).vertexCount == 0, "singleton has no tube");
@@ -274,6 +275,29 @@ public final class PipeMeshTest {
       if (elbow.vertices[i] > 0 && elbow.vertices[i] < 1) intermediate = true;
     }
     check(intermediate, "new elbow has intermediate reveal coordinates");
+  }
+
+  private static void verifyFreshStartGrowth() {
+    for (int pipeCount : new int[] {6, 14, 28}) {
+      for (int tailPoints : new int[] {0, 2, 182}) {
+        PipeEngine engine = new PipeEngine(17, 10, 7, pipeCount, new Random(294), tailPoints);
+        int[] initial = engine.snapshot();
+        check(initial.length == pipeCount * 4, "fresh scene contains only seed points");
+        for (int shape = 0; shape < 3; shape++) {
+          PipeMesh mesh = PipeMesh.build(initial, PALETTE, shape, 0.17f, tailPoints);
+          check(mesh.vertexCount == 0, "fresh scene is empty in every shape and tail mode");
+        }
+        engine.advance();
+        check(
+            engine.snapshot().length == initial.length * 2,
+            "first growth step adds only one segment per pipe");
+        for (int shape = 0; shape < 3; shape++) {
+          PipeMesh mesh = PipeMesh.build(engine.snapshot(), PALETTE, shape, 0.17f, tailPoints);
+          check(mesh.vertexCount > 0, "first timed step grows visible pipes");
+          validate(mesh);
+        }
+      }
+    }
   }
 
   private static void verifyEngineBounds() {

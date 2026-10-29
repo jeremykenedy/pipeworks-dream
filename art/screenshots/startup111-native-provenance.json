@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-29",
+  "version": "1.1.1",
+  "versionCode": 3,
+  "apkSha256": "62a038159d8db3b04346e23b0ae68707781fa48299ae37a6f77626f9ae646082",
+  "apkBytes": 62276,
+  "signerSha256": "d496ee9655c19cd60169675f806718bc3094bf8dd4c20a7cf8a74cabb93d0c86",
+  "platform": "Google TV ARM64 API34 emulator, 1920x1080",
+  "source": "Unaltered decoded frames from native screen recordings of the exact signed APK",
+  "checks": [
+    "In-place production-signer upgrade from 1.1.0/code2; all 11 provider values preserved",
+    "Fresh Preview empty rendered background at recording 1.1 seconds, then short segments and developed pipes",
+    "Ordinary Home/resume retains same Preview ActivityRecord and developed network; Back returns Settings",
+    "Actual bound PipeworksDreamService first system-preview session begins empty and grows with keep tails",
+    "A second new actual bound PipeworksDreamService session begins empty and grows with following tails after first detached",
+    "Back detaches each DreamService session",
+    "No FATAL EXCEPTION in tested package runtime log",
+    "Strict restoration passes: 11 app options, 14 UI prefs, OS19, grants/appops, external files/directories, stopped flags, users, a11y; Google Home resumed, no Dream or guard"
+  ],
+  "limits": [
+    "DreamService verification uses Android14 IDreamManager.testDream with isPreview=true, mBound=true. It is real service lifecycle/render proof, not normal or automatic idle activation.",
+    "cmd dreams start-dreaming rejected shell UID as root-only; Somnambulator did not bind under current dock-only/stay-awake settings. Those two preliminary movies are not passing Dream evidence.",
+    "No physical TV, native 4K, FPS, power or long-duration performance claim.",
+    "Frame analysis locates candidate transitions; passing empty/early/grown frames were visually inspected. No normal-speed movie playback claim."
+  ],
+  "screenshots": {
+    "pipeworks111-preview-empty-google-tv-api34.png": "d983effdc9e7197edf1e39b09b016167b970067a14dec260b52e565aeaeb333e",
+    "pipeworks111-preview-first-segments-google-tv-api34.png": "e8ab0afbe9fb84dc27be0d9f1b3a1c853e4b653bf8caa1179bc4e7ae120b9b6f",
+    "pipeworks111-preview-grown-google-tv-api34.png": "c40f061009d8449e818667673130e8085a05d80cce8aba2fd509125978e4b7ea",
+    "pipeworks111-dream-empty-google-tv-api34.png": "249f434a72a117d1eaf025d68f47b5b52386b10e7f5028f225db6cc4bda097cb",
+    "pipeworks111-dream-first-segments-google-tv-api34.png": "2656e6bbdb03364c34ff19a3c4360f52e25a34e2ddf73fec3c7db4d477fe9241",
+    "pipeworks111-dream-grown-google-tv-api34.png": "e560caeec8cad0a451e135f448414d9c5df97e7262c396cd5583e7b4cd5f0262",
+    "pipeworks111-following-dream-empty-google-tv-api34.png": "c0c203d0569c416235bbb0f4258b528cf75cf84f12fa358c2733bb5dea648a2f",
+    "pipeworks111-following-dream-first-segments-google-tv-api34.png": "ad7a8dadf4d7a847ddea84af4af7bc5a43fab47ac57a299f9a68e72a963e81ca",
+    "pipeworks111-following-dream-grown-google-tv-api34.png": "768eb6f0c2291a1faf7b9f4b828e4d95c168b20d17610398bc6e68d5e5d098b7"
+  },
+  "recordingSha256": {
+    "preview-fresh.mp4": "537f3b947c0d4bcf857d98294c7b2798c1f6300023ad2aae3890654e74ccffc8",
+    "preview-resume.mp4": "6c08a45bc541996971234655802400dce0c45cd20972557c369c4b07381e15df",
+    "dream-test-first.mp4": "2437c74a176bbee1bb4f7cb4492ae349c1cd5ebf145f513270c5509ab3538fe2",
+    "dream-test-second-following.mp4": "293f2a854e291b50b9efff458929b643acfbdb76836da0a72bed2b209671e70a"
+  }
+}
